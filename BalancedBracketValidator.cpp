@@ -2,14 +2,21 @@
 #include <stack>
 using namespace std;
 
-bool isValid(string s) {
+bool isValid(string s) 
+{
     stack<char> st;
-    for (char ch : s) {
-        if (ch == '(' || ch == '{' || ch == '[') {
+    for (char ch : s) 
+    {
+        if (ch == '(' || ch == '{' || ch == '[') 
+        {
             st.push(ch);
-        } else {
-            if (st.empty()) return false;
-
+        } 
+        else 
+        {
+            if (st.empty())
+            {
+                return false;
+            }
             char top = st.top();
             st.pop();
 
@@ -23,15 +30,18 @@ bool isValid(string s) {
     return st.empty();
 }
 
-int main() {
+int main() 
+{
     string input;
-    cout << "Enter a string of brackets: ";
     cin >> input;
 
-    if (isValid(input)) {
-        cout << "Valid parentheses.\n";
-    } else {
-        cout << "Invalid parentheses.\n";
+    if (isValid(input)) 
+    {
+        cout << "True\n";
+    } 
+    else 
+    {
+        cout << "False\n";
     }
 
     return 0;
